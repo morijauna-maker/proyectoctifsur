@@ -1,109 +1,66 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Sistema Solar Estático</title>
+ <html>
+  <head>
+    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.7.0/dist/aframe-extras.min.js"></script>
+  </head>
 
-  <style>
-    body {
-      margin: 0;
-      background: black;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      overflow: hidden;
-      font-family: Arial, sans-serif;
-    }
+  <body>
+    <a-scene xr-mode-ui="XRMode: xr">
 
-    /* Contenedor general */
-    .sistema-solar {
-      position: relative;
-      width: 900px;
-      height: 900px;
-    }
+      <a-sphere 
+        position="0 1.5 -6"
+        radius="1.2"
+        src="Sol.jpg">
+      </a-sphere>
 
-    /* Órbitas */
-    .orbita {
-      position: absolute;
-      border: 1px solid rgba(255,255,255,0.25);
-      border-radius: 50%;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
+      <a-sphere 
+        position="2 1.5 -6"
+        radius="0.15"
+        src="Mercurio.jpg">
+      </a-sphere>
 
-    /* Tamaños de órbitas */
-    .o1 { width: 160px; height: 160px; }
-    .o2 { width: 220px; height: 220px; }
-    .o3 { width: 280px; height: 280px; }
-    .o4 { width: 340px; height: 340px; }
-    .o5 { width: 450px; height: 450px; }
-    .o6 { width: 560px; height: 560px; }
-    .o7 { width: 670px; height: 670px; }
-    .o8 { width: 780px; height: 780px; }
+      <a-sphere 
+        position="3 1.5 -6"
+        radius="0.25"
+        src="Venus.png">
+      </a-sphere>
 
-    /* Sol */
-    .sol {
-      position: absolute;
-      width: 140px;
-      height: 140px;
-      background: url("sol.jpg") no-repeat center/cover;
-      border-radius: 50%;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      box-shadow: 0 0 40px 20px rgba(255,180,0,0.7);
-    }
+      <a-sphere 
+        position="4.2 1.5 -6"
+        radius="0.27"
+        src="Tierra.jpeg">
+      </a-sphere>
 
-    /* Planetas */
-    .planeta {
-      position: absolute;
-      border-radius: 50%;
-      background-size: cover;
-      background-position: center;
-    }
+      <a-sphere 
+        position="5.3 1.5 -6"
+        radius="0.2"
+        src="Marte.jpg">
+      </a-sphere>
 
-    /* Posiciones estáticas sobre cada órbita */
-    .mercurio { width: 18px; height: 18px; background-image: url("mercurio.jpg"); top: 50%; left: calc(50% + 80px); transform: translate(-50%, -50%); }
-    .venus    { width: 24px; height: 24px; background-image: url("venus.jpg");    top: calc(50% - 110px); left: 50%; transform: translate(-50%, -50%); }
-    .tierra   { width: 26px; height: 26px; background-image: url("tierra.jpg");   top: calc(50% + 140px); left: 50%; transform: translate(-50%, -50%); }
-    .marte    { width: 20px; height: 20px; background-image: url("marte.jpg");    top: 50%; left: calc(50% - 170px); transform: translate(-50%, -50%); }
-    .jupiter  { width: 55px; height: 55px; background-image: url("jupiter.jpg");  top: calc(50% - 220px); left: 50%; transform: translate(-50%, -50%); }
-    .saturno  { width: 48px; height: 48px; background-image: url("saturno.jpg");  top: calc(50% + 250px); left: 50%; transform: translate(-50%, -50%); }
-    .urano    { width: 34px; height: 34px; background-image: url("urano.jpg");    top: 50%; left: calc(50% + 330px); transform: translate(-50%, -50%); }
-    .neptuno  { width: 32px; height: 32px; background-image: url("neptuno.jpg");  top: calc(50% - 350px); left: 50%; transform: translate(-50%, -50%); }
+      <a-sphere 
+        position="7.5 1.5 -6"
+        radius="0.6"
+        src="Jupiter.jpeg">
+      </a-sphere>
 
-  </style>
-</head>
-<body>
+      <a-sphere 
+        position="9.5 1.5 -6"
+        radius="0.55"
+        src="Saturno.jpeg">
+      </a-sphere>
 
-  <div class="sistema-solar">
+      <a-sphere 
+        position="11 1.5 -6"
+        radius="0.4"
+        src="Urano.jpeg">
+      </a-sphere>
 
-    <!-- Sol -->
-    <div class="sol"></div>
+      <a-sphere 
+        position="12.5 1.5 -6"
+        radius="0.38"
+        src="Neptuno.jpeg">
+      </a-sphere>
 
-    <!-- Órbitas -->
-    <div class="orbita o1"></div>
-    <div class="orbita o2"></div>
-    <div class="orbita o3"></div>
-    <div class="orbita o4"></div>
-    <div class="orbita o5"></div>
-    <div class="orbita o6"></div>
-    <div class="orbita o7"></div>
-    <div class="orbita o8"></div>
-
-    <!-- Planetas -->
-    <div class="planeta mercurio"></div>
-    <div class="planeta venus"></div>
-    <div class="planeta tierra"></div>
-    <div class="planeta marte"></div>
-    <div class="planeta jupiter"></div>
-    <div class="planeta saturno"></div>
-    <div class="planeta urano"></div>
-    <div class="planeta neptuno"></div>
-
-  </div>
-
-</body>
+    </a-scene>
+  </body>
 </html>
